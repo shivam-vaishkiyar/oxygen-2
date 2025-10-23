@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OXYGEN — Enter</title>
+  
+  <link
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    html,body{height:100%;width:100%;overflow:hidden;font-family:'Poppins',sans-serif;background:#000}
+
+    video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:filter .6s ease, transform .6s ease}
+
+    .page-wrap{position:relative;z-index:0;min-height:100vh}
+
+    .center{position:absolute;top:55%;left:50%;transform:translate(-50%,-50%);text-align:center;-webkit-user-select:none;user-select:none;transition:filter .6s ease, transform .6s ease}
+
+    .logo{width:150px;height:150px;border-radius:50%;border:3px solid rgba(11, 76, 196, 0.8);object-fit:cover;box-shadow:0 0 20px rgba(0,255,255,0.8);margin-bottom:1rem;transition:transform .4s ease, box-shadow .4s ease;animation:float 3s ease-in-out infinite}
+
+    .logo:hover{transform:scale(1.08);box-shadow:0 0 25px rgba(0,255,255,1)}
+
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+
+    .greeting{font-size:2rem;color:rgba(255,255,255,0.95);margin-bottom:.35rem;letter-spacing:2px}
+
+    .oxygen{display:inline-block;font-size:4.2rem;font-weight:800;letter-spacing:6px;background:linear-gradient(90deg,#00fff2 0%,#007bff 40%,#ff00e6 100%);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:glowMove 4s linear infinite,pulse 3.5s ease-in-out infinite}
+
+    @keyframes glowMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+
+    .social-links{margin-top:1.2rem;display:flex;gap:28px;justify-content:center;align-items:center}
+
+    .social-links a{color:white;font-size:1.8rem;text-decoration:none;transition:transform .25s ease,color .25s ease}
+
+    .social-links a:hover{transform:scale(1.18);color:#1DB954}
+
+    .contact{margin-top:1.2rem;color:rgba(255,255,255,0.95);font-size:1rem}
+
+    .contact a{color:#fff;text-decoration:none;margin:4px;display:inline-block;transition:color .2s,text-shadow .2s}
+
+    .contact a:hover{color:#00e0ff;text-shadow:0 0 8px #00e0ff}
+
+    /* BLUR state */
+    .blurred video{filter:blur(8px) brightness(.55) saturate(.95) scale(.995)}
+
+    .blurred .center{filter:blur(6px) opacity;transform:translate(-50%,-50%) scale(.997)}
+
+    /* overlay */
+    .enter-overlay{
+      position:fixed;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;
+      background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+      transition:opacity .5s ease, visibility .5s ease;
+    }
+    .enter-inner{display:flex;flex-direction:column;align-items:center;gap:18px}
+    .enter-title{color:#fff;font-size:2rem;letter-spacing:3px;text-align:center}
+    .enter-btn{
+      background:transparent;border:2px solid rgba(255,255,255,0.9);padding:14px 30px;border-radius:999px;color:#fff;font-weight:700;cursor:pointer;
+      font-size:1.05rem;letter-spacing:1px;transition:transform .18s ease,background .18s ease,box-shadow .18s ease;
+    }
+    .enter-btn:active{transform:scale(.98)}
+    .enter-hint{color:rgba(255,255,255,0.8);font-size:.9rem}
+    .enter-overlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
+
+    /* small screens */
+    @media(max-width:600px){
+      .oxygen{font-size:2.2rem;letter-spacing:2px}
+      .greeting{font-size:1.1rem}
+      .logo{width:100px;height:100px}
+      .enter-title{font-size:1.4rem}
+      .enter-btn{padding:12px 22px;font-size:1rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap blurred" id="pageWrap">
+    <video id="bgVideo" autoplay muted loop>
+      <source src="AMV video Akhiyan gulaab x all anime girls  edit anime.mp4" type="video/mp4" />
+    </video>
+
+    <div class="center" id="centerContent">
+      <img src="wallpapersden.com_sung-jin-woo-8k-solo-leveling_wxl.jpg" alt="Oxygen Logo" class="logo" id="logoImg">
+      <div class="greeting">HI, I'M</div>
+      <div><span class="oxygen">OXYGEN</span></div>
+
+      <div class="social-links" aria-label="social links">
+        <a href="https://discord.gg/HWrTWddF4" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://www.instagram.com/shivamvaishkiyar?igsh=NGJ3Z242cDE0OG1p" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/SHIVAMRaj788929?t=nhKQJxlwtBbD6UcM5vybug&s=09" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://open.spotify.com/user/te3c0ek4yeb7g6mph2k02d0pf?si=Gte7l-5dQ6Cuc_-iYob37g" target="_blank" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+      </div>
+
+      <div class="contact">
+        <p>📩 Contact Me</p>
+        <a href="mailto:shivamraj0187@gmail.com">shivamraj0187@gmail.com</a><br>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="enter-overlay" id="enterOverlay" role="dialog" aria-modal="true">
+    <div class="enter-inner">
+      <div class="enter-title">Tap to Enter</div>
+      <button id="enterBtn" class="enter-btn" aria-label="Enter site">ENTER</button>
+      <div class="enter-hint">Tap / Click or press Enter</div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const enterBtn = document.getElementById('enterBtn');
+      const overlay = document.getElementById('enterOverlay');
+      const pageWrap = document.getElementById('pageWrap');
+      const video = document.getElementById('bgVideo');
+
+      function openSite(){
+        overlay.classList.add('hidden');
+        pageWrap.classList.remove('blurred');
+        try{
+          video.muted = false;
+          const playPromise = video.play();
+          if (playPromise && playPromise.then) {
+            playPromise.catch(()=>{/* autoplay with sound blocked; user interaction already happened */});
+          }
+        }catch(e){}
+        enterBtn.removeEventListener('click', openSite);
+        document.removeEventListener('keydown', keyHandler);
+      }
+
+      function keyHandler(e){
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          openSite();
+        }
+      }
+
+      enterBtn.addEventListener('click', openSite, {once:true});
+      document.addEventListener('keydown', keyHandler, {once:true});
+
+      
+      overlay.addEventListener('click', function(e){
+        if(e.target === overlay) openSite();
+      }, {once:true});
+    })();
+  </script>
+</body>
+</html>
